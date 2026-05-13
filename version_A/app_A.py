@@ -1,8 +1,19 @@
-import streamlit as st
+def caesar_cipher_encrypt(text, shift):
+    encrypted_text = ""
+    for char in text:
+        if 'a' <= char <= 'z':
+            encrypted_text += chr(((ord(char) - ord('a') + shift) % 26) + ord('a'))
+        elif 'A' <= char <= 'Z':
+            encrypted_text += chr(((ord(char) - ord('A') + shift) % 26) + ord('A'))
+        else:
+            encrypted_text += char
+    return encrypted_text
 
-st.subheader("🤖 Version A: The Basics")
-st.write("This is a simple app that greets you.")
+# Ask the user for input
+message = input("Enter your message: ")
 
-name = st.text_input("Enter your name:")
-if name:
-    st.write(f"Hello, {name}!")
+# Encrypt using a +3 Caesar cipher
+encrypted_message = caesar_cipher_encrypt(message, 3)
+
+# Print the encrypted message
+print("Encrypted message:", encrypted_message)
