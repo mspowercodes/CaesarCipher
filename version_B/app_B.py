@@ -1,0 +1,24 @@
+def caesar_cipher_encrypt(text, shift):
+    encrypted_text = ""
+    for char in text:
+        if 'a' <= char <= 'z':
+            encrypted_text += chr(((ord(char) - ord('a') + shift) % 26) + ord('a'))
+        elif 'A' <= char <= 'Z':
+            encrypted_text += chr(((ord(char) - ord('A') + shift) % 26) + ord('A'))
+        else:
+            encrypted_text += char
+    return encrypted_text
+
+# Ask the user for input
+message = input("Enter your message: ")
+
+# Limit message to no more than 250 characters
+if len(message) > 250:
+    print(f"Message truncated from {len(message)} to 250 characters.")
+    message = message[:250]
+
+# Encrypt using a +3 Caesar cipher
+encrypted_message = caesar_cipher_encrypt(message, 3)
+
+# Print the encrypted message
+print("Encrypted message:", encrypted_message)
