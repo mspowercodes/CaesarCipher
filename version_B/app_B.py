@@ -10,15 +10,15 @@ def caesar_cipher_encrypt(text, shift):
     return encrypted_text
 
 # Ask the user for input
-message = input("Enter your message: ")
+message = st.text_input("Enter your message: ")
 
 # Limit message to no more than 250 characters
 if len(message) > 250:
-    print(f"Message truncated from {len(message)} to 250 characters.")
+    st.write(f"Message truncated from {len(message)} to 250 characters.")
     message = message[:250]
 
 # Encrypt using a +3 Caesar cipher
 encrypted_message = caesar_cipher_encrypt(message, 3)
 
 # Print the encrypted message
-print("Encrypted message:", encrypted_message)
+st.write("Encrypted message:", encrypted_message)
