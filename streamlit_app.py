@@ -1,21 +1,22 @@
 import streamlit as st
 import importlib.util
 import os
+import sys
 
 st.set_page_config(layout="wide")
-st.title("👩‍💻 Coding a Caesar Cipher")
+st.title("👩‍💻 Code Evolution Playground")
 st.write("Select a version from the sidebar to see how the code grows!")
 
-# 1. Sidebar dropdown for students
+# 1. Sidebar dropdown for students with exact capitalization
 version = st.sidebar.selectbox(
     "Choose a version:",
-    ["Version A: A Basic +3 Cipher", "Version B: Limiting the message length"]
+    ["Version A: The +3 cipher", "Version B: Limiting message length"]
 )
 
-# Map dropdown choices to your exact folder paths
+# Map dropdown choices directly to your folder paths
 folder_map = {
-    "Version A: A Basic +3 Cipher": ("version_A", "app_A.py"),
-    "Version B: Limiting the message length": ("version_B", "app_B.py")
+    "Version A: The +3 cipher": ("version_A", "app_A.py"),
+    "Version B: Limiting message length": ("version_B", "app_B.py")
 }
 folder_name, file_name = folder_map[version]
 file_path = os.path.join(folder_name, file_name)
@@ -34,7 +35,11 @@ with col2:
     st.write("Interact with the live result here:")
     st.divider()
     
-    # Imports the version code cleanly into Column 2
+    # Memory wipe cleanup to switch versions cleanly
+    if "student_module" in sys.modules:
+        sys.modules.pop("student_module")
+        
+    # Safely import and execute the chosen version inside Column 2
     spec = importlib.util.spec_from_file_location("student_module", file_path)
     student_module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(student_module)
