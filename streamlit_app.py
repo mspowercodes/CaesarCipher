@@ -35,7 +35,7 @@ with col1:
     st.header("📝 Read the Code")
     st.write(f"This is the Python code running behind `{file_name}`:")
     with open(file_path, "r") as f:
-        st.code(f.read(), language="python")
+        st.code(f.read(), language="python", line_numbers=True)
 
 with col2:
     st.header("🎮 Run the Live App")
