@@ -13,17 +13,17 @@ def caesar_cipher_encrypt(text, shift):
     return encrypted_text
 
 st.subheader("🚀 Version B: Limiting message length")
-st.write("This version adds a rule: your secret message cannot be longer than 250 characters.")
+st.write("This version adds a rule: your secret message cannot be longer than 20 characters.")
 
 # Custom unique key for Version B input box
 message = st.text_input("Enter your secret message:", key="cipher_input_b")
 
 if message:
     # Check if the message is too long
-    if len(message) > 250:
-        st.error(f"❌ Too long! Your message has {len(message)} characters. Please keep it under 250.")
+    if len(message) > 20:
+        st.error(f"❌ Too long! Your message has {len(message)} characters. Please keep it under 20.")
     else:
         # If it passes the check, encrypt it normally
         encrypted_message = caesar_cipher_encrypt(message, 3)
         st.success(f"Encrypted message: {encrypted_message}")
-        st.info(f"📏 Message length: {len(message)} / 250 characters")
+        st.info(f"📏 Message length: {len(message)} / 20 characters")
