@@ -1,3 +1,6 @@
+import streamlit as st
+
+# Define the helper function for encryption
 def caesar_cipher_encrypt(text, shift):
     encrypted_text = ""
     for char in text:
@@ -9,16 +12,18 @@ def caesar_cipher_encrypt(text, shift):
             encrypted_text += char
     return encrypted_text
 
-# Ask the user for input
-message = st.text_input("Enter your message: ")
+st.subheader("🚀 Version B: Limiting message length")
+st.write("This version adds a rule: your secret message cannot be longer than 20 characters!")
 
-# Limit message to no more than 250 characters
-if len(message) > 250:
-    st.write(f"Message truncated from {len(message)} to 250 characters.")
-    message = message[:250]
+# Custom unique key for Version B input box
+message = st.text_input("Enter your secret message:", key="cipher_input_b")
 
-# Encrypt using a +3 Caesar cipher
-encrypted_message = caesar_cipher_encrypt(message, 3)
-
-# Print the encrypted message
-st.write("Encrypted message:", encrypted_message)
+if message:
+    # Check if the message is too long
+    if len(message) > 20:
+        st.error(f"❌ Too long! Your message has {len(message)} characters. Please keep it under 20.")
+    else:
+        # If it passes the check, encrypt it normally
+        encrypted_message = caesar_cipher_encrypt(message, 3)
+        st.success(f"Encrypted message: {encrypted_message}")
+        st.info(f"📏 Message length: {len(message)} / 20 characters")
