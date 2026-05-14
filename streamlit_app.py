@@ -10,13 +10,18 @@ st.write("Select a version from the sidebar to see how the code grows!")
 # 1. Sidebar dropdown for students with exact capitalization
 version = st.sidebar.selectbox(
     "Choose a version:",
-    ["Version A: The +3 cipher", "Version B: Limiting message length"]
+    [
+        "Version A: The +3 cipher", 
+        "Version B: Limiting the message length",
+        "Version C: Choosing the shift"
+    ]
 )
 
 # Map dropdown choices directly to your folder paths
 folder_map = {
     "Version A: The +3 cipher": ("version_A", "app_A.py"),
-    "Version B: Limiting message length": ("version_B", "app_B.py")
+    "Version B: Limiting the message length": ("version_B", "app_B.py"),
+    "Version C: Choosing the shift": ("version_C", "app_C.py")
 }
 folder_name, file_name = folder_map[version]
 file_path = os.path.join(folder_name, file_name)
