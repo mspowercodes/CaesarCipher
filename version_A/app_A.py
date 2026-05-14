@@ -1,3 +1,6 @@
+import streamlit as st
+
+# Define the helper function for encryption
 def caesar_cipher_encrypt(text, shift):
     encrypted_text = ""
     for char in text:
@@ -9,11 +12,15 @@ def caesar_cipher_encrypt(text, shift):
             encrypted_text += char
     return encrypted_text
 
-# Ask the user for input
-message = st.text_input("Enter your message: ")
+st.subheader("🔐 Version A: The +3 cipher")
+st.write("This version takes your message and shifts every letter by 3 spaces")
 
-# Encrypt using a +3 Caesar cipher
-encrypted_message = caesar_cipher_encrypt(message, 3)
+# Custom unique key for the input box
+message = st.text_input("Enter your secret message:", key="cipher_input_a")
 
-# Print the encrypted message
-st.write("Encrypted message:", encrypted_message)
+if message:
+    # Encrypt using a +3 Caesar cipher
+    encrypted_message = caesar_cipher_encrypt(message, 3)
+    
+    # Display the result to the student
+    st.success(f"Encrypted message: {encrypted_message}")
