@@ -10,10 +10,10 @@ def caesar_cipher_encrypt(text, shift):
     return encrypted_text
 
 # Ask the user for input
-message = input("Enter your message: ")
+message = st.text_input("Enter your message: ")
 
 # Encrypt using a +3 Caesar cipher
 encrypted_message = caesar_cipher_encrypt(message, 3)
 
 # Print the encrypted message
-print("Encrypted message:", encrypted_message)
+st.write("Encrypted message:", encrypted_message)
