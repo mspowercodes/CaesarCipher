@@ -10,6 +10,6 @@ st.title("Problem 4a App")
 user_message = st.text_input("Enter a plaintext message:")
 
 if user_message:
-  shifted_message = caesar_shift3(user_message)
+  shifted_message = caesar_shift4(user_message)
   st.subheader("Encrypted message:")
   st.write(shifted_message)
