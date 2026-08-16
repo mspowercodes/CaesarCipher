@@ -1,7 +1,8 @@
 import streamlit as st
 import string
 
-shift = int(input(“Enter the shift amount:”))
+# Get user input
+shift = st.number_input(“Enter the shift amount:”)
 
 def caesar_shift_user(message):
     table = str.maketrans(string.ascii_lowercase, string.ascii_uppercase[shift:26]+string.ascii_uppercase[0,shift])
