@@ -5,7 +5,7 @@ import string
 shift = st.number_input(“Enter the shift amount:”)
 
 def caesar_shift_user(message):
-    table = str.maketrans(string.ascii_lowercase, string.ascii_uppercase[shift:26]+string.ascii_uppercase[0,shift])
+    table = str.maketrans(string.ascii_lowercase, string.ascii_uppercase[shift:26]+string.ascii_uppercase[0:shift])
     return message.translate(table)
 
 st.title("Problem 5e App")
