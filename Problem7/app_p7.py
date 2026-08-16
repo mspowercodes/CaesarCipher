@@ -13,9 +13,9 @@ def caesar_decrypt_user(message):
 st.title("Problem 7 App")
 
 # Get user input
-user_message = st.text_input("Enter a plaintext message:")
+user_message = st.text_input("Enter an encrypted message:")
 
 if user_message:
   shifted_message = caesar_decrypt_user(user_message)
-  st.subheader("Encrypted message:")
+  st.subheader("Decrypted message:")
   st.write(shifted_message)
