@@ -1,7 +1,0 @@
-import string
-
-shift = int(input(“Enter the shift amount:”))
-
-def caesar_shift3(message):
-    table = str.maketrans(string.ascii_lowercase, string.ascii_uppercase[shift:26]+string.ascii_uppercase[0,shift])
-    return message.translate(table)
