@@ -1,14 +1,14 @@
 import streamlit as st
 import string
 
+st.title("Problem 6c App")
+
 # Get user input
 shift = st.slider("Enter the shift amount:", 0, 25)
 
 def caesar_shift_user(message):
     table = str.maketrans(string.ascii_lowercase, string.ascii_uppercase[shift:26]+string.ascii_uppercase[0:shift])
     return message.translate(table)
-
-st.title("Problem 6c App")
 
 # Get user input
 user_message = st.text_input("Enter a plaintext message:")
