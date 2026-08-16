@@ -4,26 +4,25 @@ import os
 import sys
 
 st.set_page_config(layout="wide")
-st.title("👩‍💻 Coding a Caesar Cipher")
-st.write("Select a version from the sidebar to see how the code grows!")
+st.title("Chapter 1: Caesar Ciphers")
 
 # 1. Sidebar dropdown for students with exact capitalization
 version = st.sidebar.selectbox(
-    "Choose a version:",
+    "Choose a script:",
     [
-        "Version A: The +3 cipher", 
-        "Version B: Limiting the message length",
-        "Version C: Choosing the shift",
-        "Version D: Encrypt or decrypt"
+        "Problems 1-2: Alice's +3 Cipher", 
+        "Problem 4a: Encrypting a +4 Cipher",
+        "Problem 4d: Decrypting a +4 Cipher",
+        "Problem 5: Claire's Simplified +3 Cipher"
     ]
 )
 
 # Map dropdown choices directly to your folder paths
 folder_map = {
-    "Version A: The +3 cipher": ("version_A", "app_A.py"),
-    "Version B: Limiting the message length": ("version_B", "app_B.py"),
-    "Version C: Choosing the shift": ("version_C", "app_C.py"),
-    "Version D: Encrypt or decrypt": ("version_D", "app_D.py")
+    "Problems 1-2: Alice's +3 Cipher": ("Problems1-2", "app_p1.2.py"),
+    "Problem 4a: Encrypting a +4 Cipher": ("Problem4a", "app_p4a.py"),
+    "Problem 4d: Decrypting a +4 Cipher": ("Problem4d", "app_p4d.py"),
+    "Problem 5: Claire's Simplified +3 Cipher": ("Problem5", "app_p5.py")
 }
 folder_name, file_name = folder_map[version]
 file_path = os.path.join(folder_name, file_name)
@@ -32,7 +31,7 @@ file_path = os.path.join(folder_name, file_name)
 col1, col2 = st.columns(2)
 
 with col1:
-    st.header("📝 Read the Code")
+    st.header("The Script")
     st.write(f"This is the Python code running behind `{file_name}`:")
     with open(file_path, "r") as f:
         st.code(f.read(), language="python", line_numbers=True)
