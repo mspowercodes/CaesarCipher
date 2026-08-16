@@ -1,29 +1,15 @@
 import streamlit as st
 
-# Define the helper function for encryption
-def caesar_cipher_encrypt(text, shift):
-    encrypted_text = ""
-    for char in text:
-        if 'a' <= char <= 'z':
-            encrypted_text += chr(((ord(char) - ord('a') + shift) % 26) + ord('a'))
-        elif 'A' <= char <= 'Z':
-            encrypted_text += chr(((ord(char) - ord('A') + shift) % 26) + ord('A'))
-        else:
-            encrypted_text += char
-    return encrypted_text
+def caesar_shift4(message):
+  table = str.maketrans("abcdefghijklmnopqrstuvwxyz", "EFGHIJKLMNOPQRSTUVWXYZABCD")
+  return message.translate(table)
 
-st.subheader("🚀 Version B: Limiting message length")
-st.write("This version adds a rule: your secret message cannot be longer than 20 characters.")
+st.title("Caesar Cipher App")
 
-# Custom unique key for Version B input box
-message = st.text_input("Enter your secret message:", key="cipher_input_b")
+# Get user input
+user_message = st.text_input("Enter a message to shift:")
 
-if message:
-    # Check if the message is too long
-    if len(message) > 20:
-        st.error(f"❌ Too long! Your message has {len(message)} characters. Please keep it under 20.")
-    else:
-        # If it passes the check, encrypt it normally
-        encrypted_message = caesar_cipher_encrypt(message, 3)
-        st.success(f"Encrypted message: {encrypted_message}")
-        st.info(f"📏 Message length: {len(message)} / 20 characters")
+if user_message:
+  shifted_message = caesar_shift4(user_message)
+  st.subheader("Shifted Result:")
+  st.write(shifted_message)
