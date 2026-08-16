@@ -10,7 +10,8 @@ st.title("Chapter 1: Caesar Ciphers")
 version = st.sidebar.selectbox(
     "Choose a script:",
     [
-        "Problems 1-2: Alice's +3 Cipher", 
+        "Problems 1-2: Alice's +3 Cipher",
+        "Problem 3: Modified +3 Cipher",
         "Problem 4a: Encrypting a +4 Cipher",
         "Problem 4d: Decrypting a +4 Cipher",
         "Problem 5: Claire's Simplified +3 Cipher"
@@ -20,6 +21,7 @@ version = st.sidebar.selectbox(
 # Map dropdown choices directly to your folder paths
 folder_map = {
     "Problems 1-2: Alice's +3 Cipher": ("Problems1-2", "app_p1.2.py"),
+    "Problem 3: Modified +3 Cipher": ("Problem3", "app_p3.py"),
     "Problem 4a: Encrypting a +4 Cipher": ("Problem4a", "app_p4a.py"),
     "Problem 4d: Decrypting a +4 Cipher": ("Problem4d", "app_p4d.py"),
     "Problem 5: Claire's Simplified +3 Cipher": ("Problem5", "app_p5.py")
