@@ -1,11 +1,8 @@
 import streamlit as st
 
-
 def caesar_shift3(message):
-  # Shift letters by 3 positions
   table = str.maketrans("abcdefghijklmnopqrstuvwxyz", "DEFGHIJKLMNOPQRSTUVWXYZABC")
   return message.translate(table)
-
 
 st.title("Caesar Cipher App")
 
