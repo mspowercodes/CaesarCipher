@@ -8,7 +8,7 @@ def caesar_shift_user(message):
     table = str.maketrans(string.ascii_lowercase, string.ascii_uppercase[shift:26]+string.ascii_uppercase[0:shift])
     return message.translate(table)
 
-st.title("Problem 5e App")
+st.title("Problem 6c App")
 
 # Get user input
 user_message = st.text_input("Enter a plaintext message:")
