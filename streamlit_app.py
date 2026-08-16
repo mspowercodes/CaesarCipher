@@ -37,10 +37,6 @@ with col1:
         st.code(f.read(), language="python", line_numbers=True)
 
 with col2:
-    st.header("🎮 Run the Live App")
-    st.write("Interact with the live result here:")
-    st.divider()
-    
     # Memory wipe cleanup to switch versions cleanly
     if "student_module" in sys.modules:
         sys.modules.pop("student_module")
