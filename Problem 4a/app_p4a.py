@@ -4,12 +4,12 @@ def caesar_shift4(message):
   table = str.maketrans("abcdefghijklmnopqrstuvwxyz", "EFGHIJKLMNOPQRSTUVWXYZABCD")
   return message.translate(table)
 
-st.title("Caesar Cipher App")
+st.title("Problem 3 App")
 
 # Get user input
-user_message = st.text_input("Enter a message to shift:")
+user_message = st.text_input("Enter a plaintext message:")
 
 if user_message:
-  shifted_message = caesar_shift4(user_message)
-  st.subheader("Shifted Result:")
+  shifted_message = caesar_shift3(user_message)
+  st.subheader("Encrypted message:")
   st.write(shifted_message)
