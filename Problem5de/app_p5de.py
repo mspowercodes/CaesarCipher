@@ -2,7 +2,7 @@ import streamlit as st
 import string
 
 def caesar_shift3(message):
-    table = str.maketrans(string.ascii_lowercase, string.ascii_uppercase[3:26]+string.ascii_uppercase[0:3])
+    table = str.maketrans(string.ascii_lowercase, string.ascii_uppercase[3:26]+string.ascii_uppercase[0:2])
     return message.translate(table)
 
 st.title("Problem 5de App")
