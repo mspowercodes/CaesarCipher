@@ -14,7 +14,7 @@ version = st.sidebar.selectbox(
         "Problem 3: Modified +3 Cipher",
         "Problem 4a: Encrypting a +4 Cipher",
         "Problem 4d: Decrypting a +4 Cipher",
-        "Problem 5: Claire's Simplified +3 Cipher"
+        "Problem 5de: Claire's Simplified +3 Cipher"
     ]
 )
 
@@ -24,7 +24,7 @@ folder_map = {
     "Problem 3: Modified +3 Cipher": ("Problem3", "app_p3.py"),
     "Problem 4a: Encrypting a +4 Cipher": ("Problem4a", "app_p4a.py"),
     "Problem 4d: Decrypting a +4 Cipher": ("Problem4d", "app_p4d.py"),
-    "Problem 5: Claire's Simplified +3 Cipher": ("Problem5", "app_p5.py")
+    "Problem 5de: Claire's Simplified +3 Cipher": ("Problem5de", "app_p5de.py")
 }
 folder_name, file_name = folder_map[version]
 file_path = os.path.join(folder_name, file_name)
